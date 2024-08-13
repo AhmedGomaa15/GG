@@ -1,10 +1,8 @@
-import './App.css';
-import Home from './Components/Shared/Home/HomePage';
+import "./App.css";
+import HomePage from "../src/Components/Shared/Home/HomePage";
 
 function App() {
-  return (
-<Home/>
-  );
+  return <HomePage />;
 }
 
 export default App;
