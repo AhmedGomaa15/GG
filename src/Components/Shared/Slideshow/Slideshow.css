@@ -1,0 +1,137 @@
+.slideshow-container {
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevents overflow */
+    transition: background-color 2s ease; /* Smooth background color transition */
+  }
+  
+  .slideshow-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .image-section {
+    width: 50%;
+    padding: 0.6rem;
+    opacity: 0; /* Start hidden */
+    transform: translateX(-100%); /* Start off-screen left */
+    animation: slideIn 2s forwards; /* Image slide-in animation */
+  }
+  
+  .image-section.slide-in {
+    animation: slideIn 2s forwards; /* Reapply slideIn animation */
+  }
+  
+  .image-section.slide-out {
+    animation: slideOut 2s forwards; /* Slide-out animation */
+  }
+  
+  .image-section img {
+    width: 100%;
+    border-radius: 0.6rem;
+    transition: transform 0.6s ease; /* Smooth scaling effect */
+  }
+  
+  .image-section img:hover {
+    transform: scale(1.05); /* Scale up on hover */
+  }
+  
+  .text-section {
+    width: 50%;
+    padding: 2rem;
+    text-align: left;
+    opacity: 0; /* Start hidden */
+    transform: scale(0.9) translateY(20px); /* Start slightly smaller and below */
+    animation: fadeInScaleUp 2s 1s forwards; /* Text fade-in and scale-up animation with delay */
+  }
+  
+  .text-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.87rem;
+    color: rgb(231, 233, 235);
+  }
+  
+  .text-section p {
+    margin-bottom: 1.3rem;
+  }
+  
+  .text-section button {
+    padding: 0.5rem 1rem;
+    background-color: #dddad6;
+    font-size: large;
+    font-weight: 500;
+    color: #106781;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+  }
+  
+  .text-section button:hover {
+    color: #167a99d0;
+    background-color: #c4c1bc; /* Change background color on hover */
+  }
+  
+  .dots-navigation {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 55%;
+    transform: translateX(-50%);
+  }
+  
+  .dots-navigation span {
+    cursor: pointer;
+    height: 0.7rem;
+    width: 0.7rem;
+    margin: 0 5px;
+    background-color: #000;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .dots-navigation span.active {
+    background-color: #fff;
+  }
+  
+  /* Keyframes for slide-in animation */
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%); /* Start off-screen left */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0); /* End at normal position */
+    }
+  }
+  
+  /* Keyframes for slide-out animation */
+  @keyframes slideOut {
+    0% {
+      opacity: 1;
+      transform: translateX(0); /* Start at normal position */
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(100%); /* End off-screen right */
+    }
+  }
+  
+  /* Keyframes for fade-in and scale-up animation */
+  @keyframes fadeInScaleUp {
+    0% {
+      opacity: 0;
+      transform: scale(0.9) translateY(20px); /* Start smaller and below */
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0); /* End at normal size and position */
+    }
+  }
+  
